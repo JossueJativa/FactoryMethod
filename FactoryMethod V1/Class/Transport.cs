@@ -14,7 +14,6 @@ namespace FactoryMethod_V1.Class
     }
 
     //clase creada para el ejemplo
-    /*
     class Ship : Transport
     {
         public override void Deliver()
@@ -22,16 +21,21 @@ namespace FactoryMethod_V1.Class
             System.Console.WriteLine("Deliver by Ship");
         }
     }
-    */
 
     abstract class Creator
     {
         public abstract Transport CreateTransport();
 
-        public void Deliver()
+        public void DeliverByTruck()
         {
             Transport transport = CreateTransport();
             transport.Deliver();
+        }
+
+        public void DeliverByShip()
+        {
+            Ship ship = new Ship();
+            ship.Deliver();
         }
     }
 
